@@ -1,19 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ImageHolder from "./ImageHolder";
-import CardText from "./CardText"
+import CardText from "./CardText";
 import { FaRegMoon, FaRegSun } from "react-icons/fa";
 
-
 const Card = () => {
-  const[toggle,setToggle]=useState(false)
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
   return (
     <>
-      <div className="lg:w-3/4 lg:h-3/4 bg-slate-900 lg:shadow-md lg:shadow-black w-full h-full lg:rounded-4xl flex flex-col lg:flex-row relative">
-      <ImageHolder/>
-      <CardText/>
-      <button className="absolute  top-[5%] left-[2%] text-5xl text-white" onClick={()=>setToggle(!toggle)}>
-        {toggle ? <FaRegSun/> : <FaRegMoon/>}
-      </button>
+      <div
+        className={`lg:w-3/4 lg:h-3/4 h-full bg-slate-900 transition-all duration-300  ${
+          theme === "dark" ? "dark:bg-slate-400" : ""
+        } lg:shadow-md lg:shadow-black w-full lg:rounded-4xl flex flex-col lg:flex-row relative`}
+      >
+        <ImageHolder theme={theme}/>
+        <CardText theme={theme}/>
+        <button
+          className={`absolute top-[5%] left-[2%] text-5xl text-white ${
+            theme === "dark" ? "dark:text-slate-900" : ""
+          }  `}
+          onClick={toggleTheme}
+        >
+          {theme === "light" ? <FaRegSun /> : <FaRegMoon />}
+        </button>
       </div>
     </>
   );

@@ -1,11 +1,11 @@
 import React from 'react'
 import Image from './Image'
 
-const ImageHolder = () => {
+const ImageHolder = ({theme}) => {
   return (
     <>
-      <div className='h-full w-1/2 flex items-center justify-center '>
-      <Image/>
+      <div className={`lg:h-full lg:w-1/2 flex items-center justify-center  w-full py-5 lg:py-0 `}>
+      <Image theme={theme}/>
       </div>
     </>
   )
