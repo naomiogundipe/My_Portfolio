@@ -5,51 +5,73 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CardText = ({theme}) => {
+const CardText = ({ theme }) => {
   return (
     <>
-      <div className={`lg:w-1/2 lg:h-full w-full items-center  text-white flex flex-col justify-center lg:pe-5 ${
-          theme === "dark" ? "dark:text-slate-900" : ""
-        }`}>
+      <div
+        className={`lg:w-1/2 lg:h-full w-full items-center  text-white flex flex-col justify-center lg:pe-5 ${
+          theme === "dark" ? "dark:text-[#111a3b]" : ""
+        }`}
+      >
         <h1 className="xl:text-5xl lg:text-3xl md:text-2xl  text-center ">
           Hi, I'm <span className="block font-bold">Naomi Ogundipe</span>
         </h1>
-        <p className={`text-center mt-5 mb-5 text-gray-500 ${
-          theme === "dark" ? "dark:text-gray-500" : ""
-        }`}>
+        <p
+          className={`text-center mt-5 mb-5 text-gray-500 ${
+            theme === "dark" ? "dark:text-gray-500" : ""
+          }`}
+        >
           Web Developer
         </p>
         <div className="flex flex-col gap-3  lg:mx-auto ">
-          <div className={`bg-slate-600 group hover:bg-white hover:text-slate-800  w-full p-1 px-3 rounded-xl flex gap-4 items-center text-md hover:duration-300 hover:transition-all ${
-          theme === "dark" ? "dark:bg-slate-900 text-white shadow-md shadow-black" : ""
-        }`}>
+          <div
+            className={`bg-slate-600 group hover:bg-white hover:text-[#111a3b]  w-full p-1 px-3 rounded-xl flex gap-4 items-center text-md hover:duration-300 hover:transition-all ${
+              theme === "dark"
+                ? "dark:bg-[#111a3b] text-white shadow-md shadow-black"
+                : ""
+            }`}
+          >
             <FontAwesomeIcon
               icon={faEnvelope}
-              className={`text-xl border-2 border-white p-3 rounded-full group-hover:bg-slate-500 group-hover:border-slate-800 group-hover:text-black group-hover:duration-300 group-hover:transition-all bg-slate-800 text-gray-500 ${
-                theme === "dark" ? "dark:bg-white text-gray-800 border-0 outline-2 -outline-offset-3 " : ""
+              className={`text-xl border-2 border-white p-3 rounded-full group-hover:bg-[#111a3b] group-hover:border-[#111a3b] group-hover:text-white group-hover:duration-300 group-hover:transition-all bg-[#111a3b] text-gray-500 ${
+                theme === "dark"
+                  ? "dark:bg-white text-gray-800 border-0 -outline-offset-3 "
+                  : ""
               }`}
             />
             <a href="mailto:ntdogundipe@gmail.com">ntdogundipe@gmail.com</a>
           </div>
-          <div className={`bg-slate-600 group hover:bg-white hover:text-slate-800  w-full p-1 px-3 rounded-xl flex gap-4 items-center text-md hover:duration-300 hover:transition-all ${
-          theme === "dark" ? "dark:bg-slate-900 text-white shadow-md shadow-black" : ""
-        }`}>
+          <div
+            className={`bg-slate-600 group hover:bg-white hover:text-[#111a3b]  w-full p-1 px-3 rounded-xl flex gap-4 items-center text-md hover:duration-300 hover:transition-all ${
+              theme === "dark"
+                ? "dark:bg-[#111a3b] text-white shadow-md shadow-black"
+                : ""
+            }`}
+          >
             <FontAwesomeIcon
               icon={faPhone}
-              className={`text-xl border-2 border-white p-3 rounded-full group-hover:bg-slate-500 group-hover:border-slate-800 group-hover:text-black group-hover:duration-300 group-hover:transition-all bg-slate-800 text-gray-500 ${
-                theme === "dark" ? "dark:bg-white text-gray-800 border-0 outline-2 -outline-offset-3 " : ""
+              className={`text-xl border-2 border-white p-3 rounded-full group-hover:bg-[#111a3b] group-hover:border-[#111a3b] group-hover:text-white group-hover:duration-300 group-hover:transition-all bg-[#111a3b] text-gray-500 ${
+                theme === "dark"
+                  ? "dark:bg-white text-gray-800 border-0 -outline-offset-3 "
+                  : ""
               }`}
             />
             <a href="tel:+2347019436201">+2347019436201</a>
           </div>
-          <div className={`bg-slate-600 group hover:bg-white hover:text-slate-800  w-full p-1 px-3 rounded-xl flex gap-4 items-center text-md hover:duration-300 hover:transition-all ${
-          theme === "dark" ? "dark:bg-slate-900 text-white shadow-md shadow-black" : ""
-        }`}>
+          <div
+            className={`bg-slate-600 group hover:bg-white hover:text-[#111a3b]  w-full p-1 px-3 rounded-xl flex gap-4 items-center text-md hover:duration-300 hover:transition-all ${
+              theme === "dark"
+                ? "dark:bg-[#111a3b] text-white shadow-md shadow-black"
+                : ""
+            }`}
+          >
             <FontAwesomeIcon
               icon={faLink}
               className={`text-xl ${
-                theme === "dark" ? "dark:bg-white text-gray-800 border-0 outline-2 -outline-offset-3 " : ""
-              } border-2 border-white p-3 rounded-full group-hover:bg-slate-500 group-hover:border-slate-800 group-hover:text-black group-hover:duration-300 group-hover:transition-all bg-slate-800 text-gray-500`}
+                theme === "dark"
+                  ? "dark:bg-white text-gray-800 border-0 -outline-offset-3 "
+                  : ""
+              } border-2 border-white p-3 rounded-full group-hover:bg-[#111a3b] group-hover:border-[#111a3b] group-hover:text-white group-hover:duration-300 group-hover:transition-all bg-[#111a3b] text-gray-500`}
             />
             <Link to={"/portfolio"}>Portfolio</Link>
           </div>
@@ -59,8 +81,10 @@ const CardText = ({theme}) => {
             <a href="https://github.com/naomiogundipe" target="_self">
               <FontAwesomeIcon
                 icon={faGithub}
-                className={`border-3 p-2 border-white bg-white text-slate-800 rounded-full cursor-pointer hover:text-white hover:bg-transparent ${
-                  theme === "dark" ? "dark:bg-slate-900 text-white border-0 hover:text-slate-900 hover:bg-slate-800" : ""
+                className={`border-3 p-2 border-white bg-white text-[#111a3b] rounded-full cursor-pointer hover:text-white hover:bg-transparent ${
+                  theme === "dark"
+                    ? "dark:bg-[#111a3b] text-white border-0 hover:text-[#111a3b] hover:bg-[#111a3b]"
+                    : ""
                 }`}
               />
             </a>
@@ -72,8 +96,10 @@ const CardText = ({theme}) => {
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
-                className={`border-3 p-2 border-white bg-white text-slate-800 rounded-full cursor-pointer hover:text-white hover:bg-transparent ${
-                  theme === "dark" ? "dark:bg-slate-900 text-white border-0 hover:text-slate-900 hover:bg-slate-800" : ""
+                className={`border-3 p-2 border-white bg-white text-[#111a3b] rounded-full cursor-pointer hover:text-white hover:bg-transparent ${
+                  theme === "dark"
+                    ? "dark:bg-[#111a3b] text-white border-0 hover:text-[#111a3b] hover:bg-[#111a3b]"
+                    : ""
                 }`}
               />
             </a>
@@ -82,8 +108,10 @@ const CardText = ({theme}) => {
             <a href="mailto:ntdogundipe@gmail.com" target="_self">
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className={`border-3 p-2 border-white bg-white text-slate-800 rounded-full cursor-pointer hover:text-white hover:bg-transparent ${
-                  theme === "dark" ? "dark:bg-slate-900 text-white border-0 hover:text-slate-900 hover:bg-slate-800" : ""
+                className={`border-3 p-2 border-white bg-white text-[#111a3b] rounded-full cursor-pointer hover:text-white hover:bg-transparent ${
+                  theme === "dark"
+                    ? "dark:bg-[#111a3b] text-white border-0 hover:text-[#111a3b] hover:bg-[#111a3b]"
+                    : ""
                 }`}
               />
             </a>

@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaBars } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
+const moreMenu = [
+  { name: "Projects", link:'/projectspage' },
+  { name: "Skills" , link:'/skills' },
+  { name: "Certifications" , link:'/certifications' },
+  { name: "Testimonials" , link:'/testimonials' },
+  { name: "Blog", link:'/blogs' },
+];
+
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenuOpen = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <>
       <div
@@ -11,8 +24,10 @@ const Header = () => {
         <div
           className={`max-w-7xl text-white flex justify-between items-center mx-auto`}
         >
-          <p className={`text-3xl font-bold`}>LOGO</p>
-          <div className={`lg:flex gap-12 items-center justify-center text-lg hidden`}>
+          <p className={`text-3xl font-bold`}>NTDEV</p>
+          <div
+            className={`lg:flex gap-12 items-center justify-center text-lg hidden`}
+          >
             <ul className={`flex gap-6 `}>
               <li className="hover:text-slate-500 font-semibold group relative">
                 <Link to={"/"}>Home</Link>
@@ -23,10 +38,28 @@ const Header = () => {
                 About
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300  group-hover:w-full "></span>
               </li>
-              <li className="hover:text-slate-500 font-semibold group relative">
-                Projects
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300  group-hover:w-full "></span>
-              </li>
+              <div className="relative">
+                <li
+                  className="hover:text-slate-500 font-semibold group relative cursor-pointer"
+                  onClick={handleMenuOpen}
+                >
+                  More
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300  group-hover:w-full "></span>
+                </li>
+                {isOpen && (
+                  <ul className="absolute bg-slate-200 w-30  left-0 rounded-xl">
+                    {moreMenu.map((list, i) => (
+                      <li
+                        key={i}
+                        className="text-black font-semibold px-2 cursor-pointer hover:bg-[#111a3b] hover:text-white duration-300 transition-all"
+                      >
+                        <Link to={list.link}>{list.name}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
               <li className="hover:text-slate-500 font-semibold group relative">
                 Blog
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300  group-hover:w-full "></span>
@@ -39,7 +72,7 @@ const Header = () => {
             </button>
           </div>
           <div className="lg:hidden block text-4xl">
-          <FaBars/>
+            <FaBars />
           </div>
         </div>
       </div>

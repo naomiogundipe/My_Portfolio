@@ -1,12 +1,21 @@
 import React from "react";
+import namedlogo from '../Card/namedlogo.jpg'
 
-const Image = ({theme}) => {
+
+
+const Image = ({ theme }) => {
   return (
     <>
-      <div className={`${
-          theme === "dark" ? "dark:bg-slate-900 shadow-none" : ""
-        } lg:w-[350px] lg:h-[350px] w-[250px] h-[250px]  rounded-full bg-white shadow-md shadow-slate-600 mx-auto `}>
-      <img src="" alt="" className="w-full h-full object-center object-cover rounded-full" />
+      <div
+        className={`${
+          theme === "dark" ? "shadow-md shadow-black" : ""
+        } lg:w-[350px] lg:h-[350px] w-[250px] h-[250px]  rounded-full shadow-md shadow-black  mx-auto `}
+      >
+        <img
+          src ={namedlogo }
+          alt=""
+          className="w-full h-full object-center object-cover rounded-full"
+        />
       </div>
     </>
   );

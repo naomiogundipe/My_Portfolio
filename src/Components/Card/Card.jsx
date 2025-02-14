@@ -3,6 +3,7 @@ import ImageHolder from "./ImageHolder";
 import CardText from "./CardText";
 import { FaRegMoon, FaRegSun } from "react-icons/fa";
 
+
 const Card = () => {
   const [theme, setTheme] = useState("light");
 
@@ -28,7 +29,7 @@ const Card = () => {
   return (
     <>
       <div
-        className={`lg:w-3/4 lg:h-3/4 h-full bg-slate-900 transition-all duration-300  ${
+        className={`lg:w-3/4 lg:h-3/4 h-full bg-[#111a3b] transition-all duration-300  justify-around items-center ${
           theme === "dark" ? "dark:bg-slate-400" : ""
         } lg:shadow-md lg:shadow-black w-full lg:rounded-4xl flex flex-col lg:flex-row relative`}
       >
@@ -36,7 +37,7 @@ const Card = () => {
         <CardText theme={theme}/>
         <button
           className={`absolute top-[5%] left-[2%] text-5xl text-white ${
-            theme === "dark" ? "dark:text-slate-900" : ""
+            theme === "dark" ? "dark:text-[#111a3b]" : ""
           }  `}
           onClick={toggleTheme}
         >
