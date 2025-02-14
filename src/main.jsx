@@ -9,10 +9,11 @@ import Certifications from './Pages/Certifications.jsx'
 import Testimonials from './Pages/Testimonials.jsx'
 import Blogs from './Pages/Blogs.jsx'
 import ProjectsPage from './Pages/ProjectsPage.jsx'
+import Error from './Error.jsx'
 
 
 const router = createBrowserRouter([
-  {path:'/',element:<App/>,errorElement:"Mistake"},
+  {path:'/',element:<App/>,errorElement:<Error/>},
   {path:'/portfolio', element:<Portfolio/>},
   {path:'/skills', element:<SkillsPage/>},
   {path:'/certifications', element:<Certifications/>},
