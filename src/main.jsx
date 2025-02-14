@@ -12,7 +12,7 @@ import ProjectsPage from './Pages/ProjectsPage.jsx'
 
 
 const router = createBrowserRouter([
-  {path:'/',element:<App/>,errorElement:"page not found"},
+  {path:'/',element:<App/>,errorElement:"Mistake"},
   {path:'/portfolio', element:<Portfolio/>},
   {path:'/skills', element:<SkillsPage/>},
   {path:'/certifications', element:<Certifications/>},
